@@ -1,0 +1,17 @@
+# Render Blueprint (선택) — 대시보드에서 직접 만들어도 됨 (README 참고)
+services:
+  - type: web
+    name: darkbackup
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: MONGODB_URI
+        sync: false
+      - key: BOT_OWNER_IDS
+        sync: false
